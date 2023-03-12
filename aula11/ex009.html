@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+           
+        }
+
+        body {
+            width: 100vw;
+            height: 80vh;
+            background-color: rgb(39, 39, 39);
+            margin-top: 50px;
+            align-items: center;
+            justify-items: center;
+            text-align: center;
+
+        }
+
+        div#container {
+            background-color: blue;
+            width: 500px;
+            height: 280px;
+            text-align: center;
+            margin: auto;
+            padding-top: 60px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin: auto;
+            padding-bottom: 20px;
+            color: white;
+            text-shadow: 1px 3px 3px black;
+        }
+
+        p {
+            margin: 20px;
+            font-size: 1.3em;
+            text-decoration: underline;
+        }
+
+        input {
+            border: none;
+            padding: 10px;
+            margin-right: 20px;
+            font-weight: bold;
+            font-size: 1em;
+        }
+
+        #button {
+            margin: auto;
+            padding: 10px;
+            border-radius: 10px;
+            transition: .6s;
+        }
+
+        #button:hover {
+            background-color: green;
+            color: black;
+        }
+
+        #result {
+            width: 50%;
+            font-weight: bold;
+            font-size: 1.6em;
+            text-align: center;
+            justify-content: center;
+            text-shadow: 1px 1px 1px white;
+            height: 50px;
+            margin: auto;
+            margin-top: 25px;
+            padding-top: 10px;
+        }
+
+   
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Em qual País você nasceu ?</h1>
+        <p>Saiba se você é Brasileiro ou Estrangeiro!</p>
+        <input type="text" id="nacionalidade" name="nacionalidade" required>
+        <input type="button" id="button" value="Verificar" onclick="calcular()">
+        <div id="result">
+            
+        </div>
+    </div>
+
+    <script>
+        function calcular() {
+
+            var país = window.document.querySelector('input#nacionalidade')
+            var resultado = window.document.querySelector('div#result')
+            
+            if ( país.value == `Brasil`)
+            {
+                resultado.innerHTML = `Você é Brasileiro!`
+                resultado.style.background = 'yellow'
+            } 
+            else 
+            {
+                resultado.innerHTML = `Você é Estrangeiro!`
+                resultado.style.background = 'red'
+            }
+
+            resultado.innerHtml = `Você é ${resultado}.`
+           
+             }
+
+    </script>
+</body>
+</html>
